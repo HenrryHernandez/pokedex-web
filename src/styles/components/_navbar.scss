@@ -65,4 +65,5 @@ header {
 
 .navbar .menu .menu-item:hover > .sub-menu {
   display: block;
+  z-index: 1;
 }
