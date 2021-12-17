@@ -12,7 +12,7 @@ export const Navbar = () => {
       <nav className="navbar">
         <ul className="menu">
           <li className="menu-item">
-            <NavLink className="navlink" to="#">
+            <NavLink className="navlink" to="/">
               PokemonHome
             </NavLink>
           </li>
