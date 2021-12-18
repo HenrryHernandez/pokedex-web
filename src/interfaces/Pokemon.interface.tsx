@@ -18,7 +18,7 @@ export interface BasicPokemonInfo {
 
 // all pokemon info when gotten by id
 
-export interface CompletePokemonResponse {
+export interface CompletePokemonInfo {
   abilities: Ability[];
   base_experience: number;
   forms: Species[];
