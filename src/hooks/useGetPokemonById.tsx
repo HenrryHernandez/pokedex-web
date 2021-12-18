@@ -6,7 +6,7 @@ import { CompletePokemonInfo } from "../interfaces/Pokemon.interface";
 export const useGetPokemonById = (pokemonId: string) => {
   const [isLoading, setIsLoading] = useState(true);
   const [completePokemonInfo, setCompletePokemonInfo] =
-    useState<CompletePokemonInfo>(); //{} as CompletePokemonInfo
+    useState<CompletePokemonInfo>({} as CompletePokemonInfo);
 
   const getPokemonById = async () => {
     setIsLoading(true);
