@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 
 import { SearchInput } from "./SearchInput";
 
-import pokemonLogo from "../../assets/logo.png";
+import pokemonLogo from "../assets/logo.png";
 
 export const Navbar = () => {
   return (
     <header>
-      <img className="logo" src={pokemonLogo} />
+      <img className="logo" alt="logo" src={pokemonLogo} />
 
       <nav className="navbar">
         <ul className="menu">

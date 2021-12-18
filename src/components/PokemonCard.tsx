@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 
-import pokebola from "../../assets/pokebola.png";
+import pokebola from "../assets/pokebola.png";
 
-import { BasicPokemonInfo } from "../../interfaces/Pokemon.interface";
+import { BasicPokemonInfo } from "../interfaces/Pokemon.interface";
 
 interface Props {
   pokemon: BasicPokemonInfo;

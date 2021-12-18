@@ -1,8 +1,7 @@
 import { useGetPokemon } from "../../hooks/useGetPokemons";
 
-import { PokemonCard } from "../pokemons/PokemonCard";
-
-import { Navbar } from "../ui/Navbar";
+import { PokemonCard } from "../../components/PokemonCard";
+import { Navbar } from "../../components/Navbar";
 
 export const HomeScreen = () => {
   const { basicPokemonInfoList } = useGetPokemon();
