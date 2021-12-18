@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import pokebola from "../../assets/pokebola.png";
 
 import { BasicPokemonInfo } from "../../interfaces/Pokemon.interface";
@@ -8,7 +10,7 @@ interface Props {
 
 export const PokemonCard = ({ pokemon }: Props) => {
   return (
-    <div className="card">
+    <NavLink className="card" to={`pokemon/${pokemon.id}`}>
       <div className="upper-card-container">
         <div className="pokebola-img-container">
           <img src={pokebola} alt="pokebola-blanca" className="pokebola-img" />
@@ -20,6 +22,6 @@ export const PokemonCard = ({ pokemon }: Props) => {
         <h3>{pokemon.name}</h3>
         <h4>#{pokemon.id}</h4>
       </div>
-    </div>
+    </NavLink>
   );
 };
