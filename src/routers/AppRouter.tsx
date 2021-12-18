@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { HomeScreen } from "../components/dashboard/HomeScreen";
-import { ErrorScreen } from "../components/errors/ErrorScreen";
-import { PokemonScreen } from "../components/pokemons/PokemonScreen";
+import { HomeScreen } from "../screens/dashboard/HomeScreen";
+import { ErrorScreen } from "../screens/errors/ErrorScreen";
+import { PokemonScreen } from "../screens/pokemons/PokemonScreen";
 
 export const AppRouter = () => {
   return (
