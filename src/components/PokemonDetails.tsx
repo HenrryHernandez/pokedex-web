@@ -1,13 +1,20 @@
-import { CompletePokemonInfo } from "../interfaces/Pokemon.interface";
+import {
+  CompletePokemonInfo,
+  BasicPokemonInfo,
+} from "../interfaces/Pokemon.interface";
 
 interface Props {
-  pokemon: CompletePokemonInfo;
+  basicPokemonInfo: BasicPokemonInfo;
+  completePokemonInfo: CompletePokemonInfo;
 }
 
-export const PokemonDetails = ({ pokemon }: Props) => {
+export const PokemonDetails = ({
+  basicPokemonInfo,
+  completePokemonInfo,
+}: Props) => {
   return (
     <div style={{ backgroundColor: "blue", width: "100%", height: "100%" }}>
-      {pokemon.abilities[0].ability.name}
+      {completePokemonInfo.abilities[0].ability.name}
     </div>
   );
 };
