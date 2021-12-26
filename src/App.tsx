@@ -1,14 +1,13 @@
-import { PokemonProvider } from "./contexts/PokemonContext";
 import { AppRouter } from "./routers/AppRouter";
 
 const AppState = ({ children }: any) => {
-  return <PokemonProvider>{children}</PokemonProvider>;
+  return <>{children}</>;
 };
 
 export const App = () => {
   return (
     <AppState>
-      <AppRouter />;
+      <AppRouter />
     </AppState>
   );
 };

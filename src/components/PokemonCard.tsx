@@ -1,9 +1,6 @@
-import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import pokebola from "../assets/pokebola.png";
-
-import { PokemonContext } from "../contexts/PokemonContext";
 
 import { BasicPokemonInfo } from "../interfaces/Pokemon.interface";
 
@@ -12,18 +9,8 @@ interface Props {
 }
 
 export const PokemonCard = ({ pokemon }: Props) => {
-  const { setPokemon } = useContext(PokemonContext);
-
-  const setBasicPokemonInfoGlobally = () => {
-    setPokemon(pokemon);
-  };
-
   return (
-    <NavLink
-      className="card"
-      to={`pokemon/${pokemon.id}`}
-      onClick={setBasicPokemonInfoGlobally}
-    >
+    <NavLink className="card" to={`pokemon/${pokemon.id}`}>
       <div className="upper-card-container">
         <div className="pokebola-img-container">
           <img src={pokebola} alt="pokebola-blanca" className="pokebola-img" />
