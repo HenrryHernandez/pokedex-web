@@ -1,7 +1,7 @@
 .pokemon-details-container {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 60px);
 }
 
 .pokemon-details-part-1 {
@@ -16,15 +16,19 @@
 
 .pokemon-details-title-container {
   width: 100%;
-  height: 10%;
+  height: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  h1 {
+    text-transform: capitalize;
+  }
 }
 
 .pokemon-details-image-container {
   width: 100%;
-  height: 45%;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,18 +37,14 @@
 
 .pokemon-details-image {
   width: auto;
-  height: 100%;
-}
-
-.pokebola-details-image {
-  width: auto;
-  height: 20%;
+  height: 80%;
 }
 
 .pokemon-details-part-2 {
   width: 60%;
   height: 100%;
   padding: 10px;
+  overflow: scroll;
 }
 
 .detail-item {

@@ -1,7 +1,5 @@
 import { CompletePokemonInfo } from "../interfaces/Pokemon.interface";
 
-import pokebola from "../assets/pokebola.png";
-
 interface Props {
   completePokemonInfo: CompletePokemonInfo;
 }
@@ -18,13 +16,6 @@ export const PokemonDetails = ({ completePokemonInfo }: Props) => {
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${completePokemonInfo.id}.png`}
             alt="pokemon"
             className="pokemon-details-image"
-          />
-        </div>
-        <div className="pokemon-details-image-container">
-          <img
-            src={pokebola}
-            alt="pokemon"
-            className="pokebola-details-image"
           />
         </div>
       </div>
