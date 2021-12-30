@@ -1,3 +1,5 @@
+import { getPokemonImage } from "../helpers/getPokemonImage";
+
 import { CompletePokemonInfo } from "../interfaces/Pokemon.interface";
 
 interface Props {
@@ -13,7 +15,7 @@ export const PokemonDetails = ({ completePokemonInfo }: Props) => {
         </div>
         <div className="pokemon-details-image-container">
           <img
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${completePokemonInfo.id}.png`}
+            src={getPokemonImage(completePokemonInfo.id)}
             alt="pokemon"
             className="pokemon-details-image"
           />

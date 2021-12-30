@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { pokeApi } from "../environment/pokeApi";
 
+import { getPokemonImage } from "../helpers/getPokemonImage";
+
 import {
   BasicPokemonData,
   BasicPokemonInfo,
@@ -35,7 +37,7 @@ export const useGetPokemon = () => {
         return {
           id,
           name,
-          image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
+          image: getPokemonImage(+id),
         };
       })
     );
