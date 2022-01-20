@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { pokeApi } from "../environment/pokeApi";
 
@@ -15,32 +15,35 @@ export const useGetPokemon = () => {
   const [basicPokemonInfoList, setBasicPokemonInfoList] = useState<
     BasicPokemonInfo[]
   >([]);
+  const nextPageUrl = useRef("https://pokeapi.co/api/v2/pokemon?limit=20");
 
   const getPokemons = async () => {
     setIsFetching(true);
 
-    const resp = await pokeApi.get<BasicPokemonResponse>(
-      "https://pokeapi.co/api/v2/pokemon?limit=20"
-    );
+    const resp = await pokeApi.get<BasicPokemonResponse>(nextPageUrl.current);
+
+    nextPageUrl.current = resp.data.next;
 
     getPokemonBasicInfoList(resp.data.results);
-
     setIsFetching(false);
   };
 
   const getPokemonBasicInfoList = (data: BasicPokemonData[]) => {
-    setBasicPokemonInfoList(
-      data.map(({ name, url }) => {
-        const urlSplitted = url.split("/");
-        const id = urlSplitted[urlSplitted.length - 2];
+    const newBasicPokemonInfoList = data.map(({ name, url }) => {
+      const urlSplitted = url.split("/");
+      const id = urlSplitted[urlSplitted.length - 2];
 
-        return {
-          id,
-          name,
-          image: getPokemonImage(+id),
-        };
-      })
-    );
+      return {
+        id,
+        name,
+        image: getPokemonImage(+id),
+      };
+    });
+
+    setBasicPokemonInfoList([
+      ...basicPokemonInfoList,
+      ...newBasicPokemonInfoList,
+    ]);
   };
 
   useEffect(() => {
