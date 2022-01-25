@@ -1,7 +1,8 @@
 import { AppRouter } from "./routers/AppRouter";
+import { SearchInputProvider } from "./contexts/SearchInputContext";
 
 const AppState = ({ children }: any) => {
-  return <>{children}</>;
+  return <SearchInputProvider>{children}</SearchInputProvider>;
 };
 
 export const App = () => {
