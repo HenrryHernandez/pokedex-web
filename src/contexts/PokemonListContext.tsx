@@ -44,7 +44,7 @@ export const PokemonListProvider = ({ children }: any) => {
     setIsLoading(true);
 
     const pokemonList = await getPokemons();
-    dispatch({ type: "setPokemonList", payload: pokemonList });
+    //dispatch({ type: "setPokemonList", payload: pokemonList });
 
     setIsLoading(false);
   };
